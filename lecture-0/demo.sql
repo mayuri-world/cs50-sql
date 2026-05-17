@@ -1,2 +1,2 @@
 select * from "longlist" limit 3;
-select "title" from "longlist";
+select "author" from "longlist";
