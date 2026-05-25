@@ -43,6 +43,29 @@ SELECT "title", "rating", "votes" FROM "longlist" WHERE "rating" > 4.0 AND "vote
 SELECT "title", "pages" FROM "longlist" WHERE "pages" < 300;
 
 
+SELECT "title", "rating" 
+FROM "longlist" 
+ORDER BY "rating" LIMIT 10;
+
+SELECT "title", "rating" 
+FROM "longlist" 
+ORDER BY "rating" DESC LIMIT 10;
+
+SELECT "title", "rating", "votes" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
+SELECT "title" FROM "longlist" ORDER BY "title";
+SELECT AVG("rating") FROM "longlist";
+SELECT ROUND(AVG("rating"), 2) FROM "longlist";
+SELECT ROUND(AVG("rating"), 2) AS "average rating" FROM "longlist";
+SELECT MAX("rating") FROM "longlist";
+SELECT MIN ("rating") FROM "longlist";
+SELECT SUM("votes") FROM "longlist";
+SELECT COUNT(*) FROM "longlist";
+SELECT COUNT("translator") FROM "longlist";
+SELECT COUNT("publisher") FRON "longlist";
+SELECT COUNT("publisher") FROM "longlist";
+SELECT COUNT(DISTINCT "publisher") FROM "longlist";
+
+
 
 
 
