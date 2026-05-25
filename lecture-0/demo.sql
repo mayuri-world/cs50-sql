@@ -2,24 +2,24 @@ select * from "longlist" limit 3;
 
 select "author" from "longlist";
 
-select "title", "author" from "longlist" where "year"=2022; 
+select "title", "author" from "longlist" where "year"=2022;
 
-select "title", "author" from "longlist" where "year"=2021; 
+select "title", "author" from "longlist" where "year"=2021;
 
-SELECT "title", "format" 
-FROM "longlist" 
+SELECT "title", "format"
+FROM "longlist"
 WHERE "format" != 'hardcover';
 
-SELECT "title", "format" 
-FROM "longlist" 
+SELECT "title", "format"
+FROM "longlist"
 WHERE "format" <> 'hardcover';
 
-SELECT "title", "format" 
-FROM "longlist" 
+SELECT "title", "format"
+FROM "longlist"
 WHERE NOT "format" = 'hardcover';
 
-SELECT "title", "author" 
-FROM "longlist" 
+SELECT "title", "author"
+FROM "longlist"
 WHERE "year" = 2022 OR "year" = 2023;
 
 select * FROM "longlist";
@@ -43,12 +43,12 @@ SELECT "title", "rating", "votes" FROM "longlist" WHERE "rating" > 4.0 AND "vote
 SELECT "title", "pages" FROM "longlist" WHERE "pages" < 300;
 
 
-SELECT "title", "rating" 
-FROM "longlist" 
+SELECT "title", "rating"
+FROM "longlist"
 ORDER BY "rating" LIMIT 10;
 
-SELECT "title", "rating" 
-FROM "longlist" 
+SELECT "title", "rating"
+FROM "longlist"
 ORDER BY "rating" DESC LIMIT 10;
 
 SELECT "title", "rating", "votes" FROM "longlist" ORDER BY "rating" DESC, "votes" DESC LIMIT 10;
