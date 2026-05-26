@@ -65,6 +65,10 @@ SELECT COUNT("publisher") FRON "longlist";
 SELECT COUNT("publisher") FROM "longlist";
 SELECT COUNT(DISTINCT "publisher") FROM "longlist";
 
+SELECT "id" FROM "publishers" WHERE "publisher" ='Maclehose Press';
+SELECT * FROM "sea_lions" JOIN "migrations" ON "migrations"."id" = "sea_lions"."id";
+SELECT * FROM "sea_lions" LEFT JOIN "migrations" ON "migrations"."id" = "sea_lions"."id";
+
 
 
 
