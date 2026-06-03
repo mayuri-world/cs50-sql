@@ -47,15 +47,6 @@ CREATE TABLE visits (
 
 DROP TABLE "riders";
 
-//...alter....
-
-ALTER TABLE "visits"
-RENAME TO "swipes";
-
-ALTER TABLE "swipes"
-ADD COLUMN "swipetype" TEXT;
-
-
 CREATE TABLE "cards" (
     "id" INTEGER,
     PRIMARY KEY("id")
