@@ -10,3 +10,10 @@ VALUES ('Farmers working at dawn', '11.6152', '1911-08-03');
 
 SELECT * FROM "collections";
 
+
+
+INSERT INTO "collections" ("title", "accession_number", "acquired")
+VALUES(NULL, NULL, '1900-01-10');
+
+
+
