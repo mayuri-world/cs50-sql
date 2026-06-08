@@ -15,7 +15,7 @@ CREATE TABLE visits (
 "rider_id",
 "station_id"
 );
-CREATE TABLE stations ( 
+CREATE TABLE stations (
 "id",
 "name",
 "line"
