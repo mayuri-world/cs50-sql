@@ -70,6 +70,32 @@ SELECT * FROM "artists";
 
 SELECT * FROM "created";
 
+DELETE FROM "artists"
+WHERE "name" = 'Unidentified artist';
+
+DELETE FROM "created"
+WHERE "artist_id" = (
+    SELECT "id"
+    FROM "artists"
+    WHERE "name" = 'Unidentified artist'
+);
+
+DELETE FROM "collections"
+WHERE "artist_id" = (
+    SELECT "id"
+    FROM "artists"
+    WHERE "name" = 'Unidentified artist'
+);
+DELETE FROM "artists"
+WHERE "name" = 'Unidentified artist';
+
+SELECT * FROM "artists";
+
+SELECT * FROM "created";
+
+
+
+
 
 
 
