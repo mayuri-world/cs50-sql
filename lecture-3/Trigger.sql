@@ -16,3 +16,14 @@ BEGIN
     VALUES (OLD."title", 'sold');
 END;
 
+
+
+CREATE TRIGGER "buy"
+AFTER INSERT ON "collections"
+BEGIN
+    INSERT INTO "transactions" ("title", "action")
+    VALUES (NEW."title", 'bought');
+END;
+
+SELECT * FROM "transactions";
+
