@@ -20,3 +20,4 @@ WITH "average_book_ratings" AS (
 )
 SELECT "year", ROUND(AVG("rating"), 2) AS "rating" FROM "average_book_ratings"
 GROUP BY "year";
+
