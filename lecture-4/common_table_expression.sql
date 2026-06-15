@@ -1,0 +1,22 @@
+DROP VIEW "average_book_ratings";
+
+
+
+WITH "average_book_ratings" AS (
+    SELECT "book_id", "title", "year", ROUND(AVG("rating"), 2) AS "rating" FROM "ratings"
+    JOIN "books" ON "ratings"."book_id" = "books"."id"
+    GROUP BY "book_id"
+)
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating" FROM "average_book_ratings"
+GROUP BY "year";
+
+
+
+CREATE TEMPORARY VIEW "average_ratings_by_year" AS
+WITH "average_book_ratings" AS (
+    SELECT "book_id", "title", "year", ROUND(AVG("rating"), 2) AS "rating" FROM "ratings"
+    JOIN "books" ON "ratings"."book_id" = "books"."id"
+    GROUP BY "book_id"
+)
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating" FROM "average_book_ratings"
+GROUP BY "year";
