@@ -42,7 +42,9 @@ WHERE "id" = (
     )
 );
 
-/* IN */
+/* IN
+IN is used when the subquery returns more than one value.
+This keyword is used to check whether the desired value is in a given list or set of values.*/
 
 SELECT "title"
 FROM "books"
@@ -64,4 +66,18 @@ WHERE "id" IN (
     WHERE "author_id" IN (
         SELECT "id"
         FROM "authors"  WHERE "name" IN ('Fernanda Melchor', 'Olga Tokarczuk')    )
+);
+
+SELECT "title"
+FROM "books"
+WHERE "id" IN (
+    SELECT "book_id"
+    FROM "authored"
+    WHERE "author_id" IN (
+        SELECT "id"
+        FROM "authors"  WHERE "name" IN ('Fernanda Melchor', 'Olga Tokarczuk')    )
+) AND "publisher_id" IN (
+    SELECT "id"
+    FROM "publishers"
+    WHERE "publisher" IN ('Fitzcarraldo Editions', 'Maclehose Press')
 );
