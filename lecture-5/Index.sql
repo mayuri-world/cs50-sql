@@ -55,3 +55,12 @@ ORDER BY "release_year" DESC;
 
 
 
+CREATE INDEX "title_index" ON "movies" ("title");
+
+SELECT "title" FROM "movies" WHERE "title" = 'The Fabelmans';
+SELECT "title" FROM "movies" WHERE "title" = 'The Fabelmans' AND "release_year" = 2022;
+CREATE INDEX "title_year_index" ON "movies" ("title", "release_year");
+SELECT "title" FROM "movies" WHERE "title" = 'The Fabelmans';
+SELECT "title" FROM "movies" WHERE "title" = 'The Fabelmans'
+AND "release_year" = 2022;
+
