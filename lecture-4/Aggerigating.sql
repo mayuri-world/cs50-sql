@@ -1,3 +1,6 @@
+
+/* Aggregating data with GROUP BY*/
+/*  aggregating: running aggregate functions, like finding the sum, and storing the results,*/
 SELECT "book_id", ROUND(AVG("rating"), 2) AS "rating"
 FROM "ratings"
 GROUP BY "book_id";
