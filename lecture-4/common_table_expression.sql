@@ -1,6 +1,6 @@
+
+
 DROP VIEW "average_book_ratings";
-
-
 
 WITH "average_book_ratings" AS (
     SELECT "book_id", "title", "year", ROUND(AVG("rating"), 2) AS "rating" FROM "ratings"
