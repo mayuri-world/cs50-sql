@@ -1,4 +1,5 @@
 
+/*partitioning: dividing data into logical pieces, so that we can query only the data we need, instead of all the data,*/
 
 CREATE VIEW "2022" AS
 SELECT "id", "title" FROM "books"
