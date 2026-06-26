@@ -1,6 +1,8 @@
 ALTER TABLE "collections"
 ADD COLUMN "deleted" INTEGER DEFAULT 0;
 
+/* Update the deleted column to 1 for the record with title 'Farmers working at dawn' */
+
 UPDATE "collections"
 SET "deleted" = 1
 WHERE "title" = 'Farmers working at dawn';
@@ -13,6 +15,8 @@ WHERE "deleted" = 0;
 SELECT * FROM "current_collections";
 
 SELECT * FROM "collections";
+
+/* Delete from the view, not the table */
 
 
 CREATE TRIGGER "delete"
@@ -28,6 +32,7 @@ WHERE "title" = 'Imaginative landscape';
 
 SELECT * FROM "current_collections";
 
+/* Insert into the view, not the table */
 
 CREATE TRIGGER "insert_when_exists"
 INSTEAD OF INSERT ON "current_collections"
@@ -41,6 +46,7 @@ BEGIN
     WHERE "accession_number" = NEW."accession_number";
 END;
 
+/* Insert into the view, not the table */
 
 CREATE TRIGGER "insert_when_new"
 INSTEAD OF INSERT ON "current_collections"
@@ -52,6 +58,10 @@ BEGIN
     INSERT INTO "collections" ("title", "accession_number", "acquired")
     VALUES (NEW."title", NEW."accession_number", NEW."acquired");
 END;
+
+
+
+SELECT * FROM "current_collections";
 
 
 
