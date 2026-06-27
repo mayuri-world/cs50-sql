@@ -1,9 +1,19 @@
 
+/* Securing sensitive data in views */
 
 CREATE VIEW "analysis" AS
 SELECT "id", "origin", "destination", 'Anonymous' AS "rider"
 FROM "rides";
 
+CREATE VIEW "analysis" AS
+SELECT "id", "origin", "destination", 'Anonymous' AS "rider"
+FROM "rides";
+
+SELECT * FROM "analysis";
+
+CREATE VIEW "analysis" AS
+SELECT "id", "origin", "destination", 'Anonymous' AS "rider"
+FROM "rides";
 
 SELECT * FROM "analysis";
 
@@ -13,8 +23,3 @@ FROM "rides";
 
 SELECT * FROM "analysis";
 
-CREATE VIEW "analysis" AS
-SELECT "id", "origin", "destination", 'Anonymous' AS "rider"
-FROM "rides";
-
-SELECT * FROM "analysis";
