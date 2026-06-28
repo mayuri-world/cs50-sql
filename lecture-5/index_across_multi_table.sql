@@ -37,3 +37,15 @@ WHERE "id" IN (
 ) AND "release_year" >= 2022
 
 ORDER BY "release_year" DESC;
+
+/* DROP INDEX */
+
+DROP INDEX "person_index";
+
+/* create the new index. */
+
+CREATE INDEX "person_index" ON "stars" ("person_id", "movie_id");
+
+CREATE INDEX "person_index" ON "people" ("name");
+
+
