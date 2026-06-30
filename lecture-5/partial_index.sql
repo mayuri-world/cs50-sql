@@ -24,3 +24,37 @@ WHERE NOT ("year" >= 2022 AND "year" <= 2023);
 CREATE INDEX "recents" ON "movies" ("titles")
 WHERE "year" >= 2022 AND "year" <= 2023;
 
+/*We can check that searching for movies released in 2023 uses the new index.*/
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" = 2023;
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" >= 2022 AND "year" <= 2023;
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" BETWEEN 2022 AND 2023;
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" < 2022 OR "year" > 2023;
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE NOT ("year" >= 2022 AND "year" <= 2023);
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" >= 2022 AND "year" <= 2023;
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" >= 2022 AND "year" <= 2023
+
+EXPLAIN QUERY PLAN
+SELECT "title" FROM "movies"
+WHERE "year" >= 2022 AND "year" <= 2023
+
