@@ -12,7 +12,6 @@ Transactions have some properties, which can be remembered using the acronym ACI
 
 SELECT * FROM "accounts";
 
-
 BEGIN TRANSACTION;
 UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
 UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1;
@@ -22,4 +21,15 @@ COMMIT;
 UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
 UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1;
 ROLLBACK;
+
+BEGIN TRANSACTION;
+UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
+UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1;
+COMMIT;
+
+BEGIN TRANSACTION;
+UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
+UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1;
+ROLLBACK;
+
 
