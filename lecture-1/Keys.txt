@@ -1,0 +1,12 @@
+
+Primary Keys
+
+    In the case of books, every book has a unique identifier called an ISBN. In other words, if you search for a book by its ISBN, only one book will be found. In database terms, the ISBN is a primary key — an identifier that is unique for every item in a table.
+
+    "Table with ISBNs and book titles"
+
+Foreign Keys
+
+    Keys also help relate tables in SQL.
+
+    A foreign key is a primary key taken from a different table. By referencing the primary key of a different table, it helps relate the tables by forming a link between them.
