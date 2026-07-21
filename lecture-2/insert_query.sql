@@ -47,6 +47,20 @@ INSERT INTO "collections" ("title", "accession_number", "acquired")
 VALUES(NULL, NULL, '1900-01-10');
 
 
+INSERT INTO "collections" ("title", "accession_number", "acquired")
+VALUES
+('Imaginative landscape', '56.496', NULL),
+('Peonies and butterfly', '06.1899', '1906-01-01');
+
+INSERT INTO "collections" ("title", "accession_number", "acquired")
+VALUES ('Imaginative landscape', '56.496', NULL),
+('Peonies and butterfly', '06.1899', '1906-01-01');
+
+INSERT INTO "collections" ("title", "accession_number", "acquired")
+VALUES ('Imaginative landscape', '56.496', NULL),
+('Peonies and butterfly', '06.1899', '1906-01-01');
+
+
 
 
 
