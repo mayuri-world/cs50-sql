@@ -95,6 +95,47 @@ SELECT * FROM "created";
 
 
 
+DELETE FROM "collections"
+WHERE "title" = 'Spring outing';
+
+DELETE FROM "collections"
+WHERE "acquired" IS NULL;
+
+DELETE FROM "collections"
+WHERE "id" IN (1, 2);
+
+DELETE FROM "collections"
+WHERE "acquired" < '1909-01-01';
+
+delete from "collections"
+where "id" in (select "collection_id" from "created"
+where "artist_id" = (select "id" from "artists"
+where "name" = 'Unidentified artist'));
+
+DELETE FROM "artists"
+WHERE "name" = 'Unidentified artist';
+
+delete from "created"
+where "artist_id" = (select "id" from "artists"
+where "name" = 'Unidentified artist');
+
+delete from "collections"
+where "artist_id" = (select "id" from "artists"
+where "name" = 'Unidentified artist');
+
+delete from "artists"
+where "name" = 'Unidentified artist';
+
+DELETE FROM "artists"
+WHERE "name" = 'Unidentified artist';
+
+delete from "collections"
+where "artist_id" in (select "id" from "artists"
+where "name" = 'Unidentified artist');
+
+
+
+
 
 
 
