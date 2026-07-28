@@ -62,6 +62,12 @@ VALUES ('Imaginative landscape', '56.496', NULL),
 
 
 
+INSERT INTO "collections" ("title", "accession_number", "acquired")
+SELECT "title", "accession_number", "acquired" FROM "temp";
+
+
+
+
 
 
 
