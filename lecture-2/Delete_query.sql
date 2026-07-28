@@ -133,6 +133,22 @@ delete from "collections"
 where "artist_id" in (select "id" from "artists"
 where "name" = 'Unidentified artist');
 
+DELETE FROM "collections"
+WHERE "acquired" IS NULL;
+
+DELETE FROM "collections"
+WHERE "id" IN (1, 2);
+
+DELETE FROM "collections"
+WHERE "acquired" < '1909-01-01';
+
+DELETE FROM "collections"
+WHERE "artist_id" IN (SELECT "id" FROM "artists"
+WHERE "name" = 'Unidentified artist');
+
+DELETE FROM "artists"
+WHERE "name" = 'Unidentified artist';
+
 
 
 
