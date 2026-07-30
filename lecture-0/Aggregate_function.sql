@@ -1,0 +1,42 @@
+SELECT AVG("rating") FROM "longlist";
+SELECT ROUND(AVG("rating"), 2) FROM "longlist";
+SELECT ROUND(AVG("rating"), 2) AS "average rating" FROM "longlist";
+SELECT MAX("rating") FROM "longlist";
+SELECT MIN ("rating") FROM "longlist";
+SELECT SUM("votes") FROM "longlist";
+SELECT COUNT(*) FROM "longlist";
+SELECT COUNT("translator") FROM "longlist";
+SELECT COUNT("publisher") FRON "longlist";
+SELECT COUNT("publisher") FROM "longlist";
+SELECT COUNT(DISTINCT "publisher") FROM "longlist";
+
+SELECT "book_id", "title", "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "book_id";
+
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+GROUP BY "book_id";
+
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+GROUP BY "book_id"
+ORDER BY "rating" DESC
+LIMIT 10;
+
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+GROUP BY "book_id"
+ORDER BY "rating" DESC
+LIMIT 10
+OFFSET 10;
+
+SELECT "book_id", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+GROUP BY "book_id"
+ORDER BY "rating" DESC
+LIMIT 10
+OFFSET 20;
+
+
