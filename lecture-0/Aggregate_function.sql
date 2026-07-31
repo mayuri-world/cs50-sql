@@ -39,4 +39,36 @@ ORDER BY "rating" DESC
 LIMIT 10
 OFFSET 20;
 
+SELECT "book_id", "title", "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "book_id";
+
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "year";
+
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "year"
+ORDER BY "year" DESC;
+
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "year"
+ORDER BY "year" DESC
+LIMIT 10;
+
+SELECT "year", ROUND(AVG("rating"), 2) AS "rating"
+FROM "ratings"
+JOIN "books" ON "ratings"."book_id" = "books"."id"
+GROUP BY "year"
+ORDER BY "year" DESC
+LIMIT 10
+OFFSET 10;
+
+
 
