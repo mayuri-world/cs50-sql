@@ -54,3 +54,9 @@ CREATE INDEX "release_year_title_index" ON "movies" ("release_year", "title");
 10. Bitmap Index: Uses bitmaps to represent the presence or absence of values in a column. It is efficient for columns with low cardinality (few distinct values) and is often used in data warehousing scenarios.
 11. Hash Index: Uses a hash function to map indexed values to specific locations in the index structure. It provides fast lookups for equality comparisons but may not be suitable for range queries.
 */
+
+CREATE INDEX "person_index" ON "stars" ("person_id");
+
+CREATE INDEX "movie_index" ON "stars" ("movie_id");
+
+CREATE INDEX "person_movie_index" ON "stars" ("person_id", "movie_id");
