@@ -33,3 +33,13 @@ UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1;
 ROLLBACK;
 
 
+
+BEGIN TRANSACTION;
+UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
+UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1; -- Invokes constraint error
+ROLLBACK;
+
+BEGIN TRANSACTION;
+UPDATE "accounts" SET "balance" = "balance" + 10 WHERE "id" = 2;
+UPDATE "accounts" SET "balance" = "balance" - 10 WHERE "id" = 1; -- Invokes constraint error
+COMMIT;
