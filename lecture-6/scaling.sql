@@ -9,3 +9,17 @@ CREATE TABLE `cards` (
     PRIMARY KEY(`id`)
 );
 
+CREATE TABLE `users` (
+    `id` INT AUTO_INCREMENT,
+    PRIMARY KEY(`id`)
+);
+
+CREATE TABLE `user_cards` (
+    `id` INT AUTO_INCREMENT,
+    `user_id` INT,
+    `card_id` INT,
+    PRIMARY KEY(`id`),
+    FOREIGN KEY(`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY(`card_id`) REFERENCES `cards`(`id`)
+);
+
