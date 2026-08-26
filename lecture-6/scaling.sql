@@ -23,3 +23,14 @@ CREATE TABLE `user_cards` (
     FOREIGN KEY(`card_id`) REFERENCES `cards`(`id`)
 );
 
+
+CREATE TABLE `stations` (
+    `id` INT AUTO_INCREMENT,
+    `name` VARCHAR(32) NOT NULL UNIQUE,
+    `line` ENUM('blue', 'green', 'orange', 'red') NOT NULL,
+    PRIMARY KEY(`id`)
+);
+
+create index `idx_stations_line` on `stations`(`line`);
+
+
