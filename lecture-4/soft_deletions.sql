@@ -60,7 +60,6 @@ BEGIN
 END;
 
 
-
 SELECT * FROM "current_collections";
 
 
