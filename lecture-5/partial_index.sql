@@ -56,5 +56,5 @@ WHERE "year" >= 2022 AND "year" <= 2023
 
 EXPLAIN QUERY PLAN
 SELECT "title" FROM "movies"
-WHERE "year" >= 2022 AND "year" <= 2023
+WHERE "year" >= 2022 AND "year" <= 2023S
 
