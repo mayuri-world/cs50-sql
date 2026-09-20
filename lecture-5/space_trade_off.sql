@@ -1,0 +1,1 @@
+/* Indexes seem incredibly helpful, but there are trade-offs associated — they occupy additional space in the database, so while we gain query speed, we do lose space. */
